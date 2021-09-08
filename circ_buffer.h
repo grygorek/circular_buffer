@@ -128,7 +128,7 @@ namespace utils {
       return { *this, _h };
     }
     constexpr const iterator<T, N> end() const {
-      return iterator<T, N>( *this, _h );
+      return { *this, _h };
     }
   };
 
