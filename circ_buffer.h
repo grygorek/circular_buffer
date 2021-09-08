@@ -105,12 +105,12 @@ namespace utils {
       return _d[_t + idx];
     }
 
-    template<class T, int N>
+    template<class C, int K>
     class iterator {
-      CircBuffer<T, N>* _cb;
+      CircBuffer<C, K>* _cb;
       int _idx;
     public:
-      constexpr iterator(CircBuffer<T, N>& c, int idx) : _cb(&c), _idx(idx) {}
+      constexpr iterator(CircBuffer<C, K>& c, int idx) : _cb(&c), _idx(idx) {}
       constexpr iterator& operator++() { _idx++; return *this; }
       constexpr iterator operator++(int) { iterator ret = *this; ++(*this); return ret; }
       constexpr T& operator*() { return (*_cb)[_idx]; }
